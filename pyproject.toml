@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "langchain-curt"
+version = "0.1.0"
+description = "LangChain chat loader for .curt conversation files (.curt v1 — open single-file AI conversation format)"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Jordan Newell" }]
+requires-python = ">=3.10"
+dependencies = ["langchain-core>=0.3,<2.0"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "https://github.com/JordanNewell/langchain-curt"
+Repository = "https://github.com/JordanNewell/langchain-curt"
+Documentation = "https://github.com/JordanNewell/dot_curt"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/langchain_curt"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
